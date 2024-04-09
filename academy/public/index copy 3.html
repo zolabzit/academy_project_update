@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zolabz Academy - Internship Application Form</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/mystyles.css" rel="stylesheet" />
+  <style>
+    .internship-form h2 {
+      text-align: center;
+      color: #007bff;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      font-weight: bold;
+    }
+    .download-button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <div class="container">
+    <div class="internship-form">
+      <h2 class="py-3">Internship Application Form</h2>
+      <hr class="mb-4" />
+      <form id="internshipApplicationForm">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input type="text" class="form-control" id="fullName" name="fullName" required />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <button class="btn btn-secondary download-button" id="downloadResume" type="button">
+              Download Resume
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zolabz Academy - Internship Application Form</title>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/mystyles.css" rel="stylesheet" />
+
+  <style>
+   .internship-form h2 {
+    text-align: center;
+    color: #007bff;
+   }
+
+   .form-group {
+    margin-bottom: 20px;
+   }
+
+   label {
+    font-weight: bold;
+   }
+  </style>
+ </head>
+ <body>
+  <div id="root"></div>
+  <div class="container">
+   <div class="internship-form">
+    <h2 class="py-3">Internship Application Form</h2>
+    <hr class="mb-4" />
+    <form id="internshipApplicationForm" enctype="multipart/form-data">
+     <div id="successMessage" class="text-success"></div>
+     <div class="row">
+      <div class="col-md-6">
+       <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input
+         type="text"
+         class="form-control"
+         id="fullName"
+         name="fullName"
+         required
+        />
+       </div>
+
+       <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input
+         type="tel"
+         class="form-control"
+         id="phone"
+         name="phone"
+         required
+        />
+       </div>
+      </div>
+
+      <div class="col-md-6">
+       <div class="form-group">
+        <label for="email">Email</label>
+        <input
+         type="email"
+         class="form-control"
+         id="email"
+         name="email"
+         required
+        />
+       </div>
+
+       <div class="form-group">
+        <label for="gender">Gender</label>
+        <select class="form-control" id="gender" name="gender" required>
+         <option value="" disabled selected>Select Gender</option>
+         <option value="male">Male</option>
+         <option value="female">Female</option>
+         <option value="other">Other</option>
+        </select>
+       </div>
+      </div>
+     </div>
+
+     <div class="row">
+      <div class="col-md-6">
+       <div class="form-group">
+        <label for="university">University/College</label>
+        <input
+         type="text"
+         class="form-control"
+         id="university"
+         name="university"
+         required
+        />
+       </div>
+      </div>
+
+      <div class="col-md-6">
+       <div class="form-group">
+        <label for="studyArea">Major/Area of Study</label>
+        <input
+         type="text"
+         class="form-control"
+         id="studyArea"
+         name="studyArea"
+         required
+        />
+       </div>
+      </div>
+     </div>
+
+     <div class="row">
+      <div class="col-md-6">
+       <div class="form-group">
+        <label for="completionYear">Year of Completion</label>
+        <input
+         type="text"
+         class="form-control"
+         id="completionYear"
+         name="completionYear"
+         required
+        />
+       </div>
+      </div>
+     </div>
+
+     <div class="form-group">
+      <label for="resume">Upload Resume / CV</label><br />
+      <input
+       type="file"
+       class="form-control-file"
+       id="resume"
+       name="resume"
+       accept=".pdf,.doc,.docx"
+       required
+      />
+     </div>
+
+        <!-- <div class="form-group">
+      <label for="resume">Paste Your CV Content Here</label>
+      <textarea
+       class="form-control"
+       id="resumeContent"
+       name="resumeContent"
+       rows="4"
+       required
+      ></textarea>
+     </div> -->
+
+     <div class="form-group">
+      <label for="coverLetter">Cover Letter</label>
+      <textarea
+       class="form-control"
+       id="coverLetter"
+       name="coverLetter"
+       rows="4"
+       required
+      ></textarea>
+     </div>
+
+     <button type="submit" class="btn custom-button custom-border-btn">
+      Submit Application
+     </button>
+    </form>
+   </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+   document
+    .getElementById("internshipApplicationForm")
+    .addEventListener("submit", function (event) {
+     event.preventDefault();
+
+     const form = event.target;
+     const formData = new FormData(form);
+
+     const formObject = {};
+     formData.forEach((value, key) => {
+      formObject[key] = value;
+     });
+
+     axios
+      .post("http://localhost:3000/api/internship", formObject)
+      .then((response) => {
+       console.log(response.data);
+       const successMessage = document.getElementById("successMessage");
+       successMessage.innerText = "Your application submitted successfully!";
+       form.reset();
+      })
+      .catch((error) => {
+       console.error(error);
+      });
+    });
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <script src="script.js"></script>
+ </body>
+</html>

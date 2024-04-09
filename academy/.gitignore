@@ -1,0 +1,9 @@
+# Convert line endings to LF using dos2unix
+dos2unix .gitignore
+
+# Verify line endings
+cat -e .gitignore
+
+# Add and commit changes with custom message
+git add .gitignore
+git commit -m "Update .gitignore with LF line endings. ithai yengu kudukanum"

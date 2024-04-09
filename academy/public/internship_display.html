@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internship Records</title>
+  <!-- Include jQuery library -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: #333; /* Sample text color */
+    }
+
+    h2 {
+      color: #3498db;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+      color: #555; /* Sample text color */
+    }
+
+    th {
+      background-color: #f2f2f2;
+      color: #333; /* Header text color */
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .photo img {
+      max-width: 100px;
+    }
+
+    .resume button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .resume button:hover {
+      background-color: #45a049;
+    }
+
+    th.Date,
+    td.Date {
+      width: 150px; /* Adjust the width as needed */
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Internship Records</h2>
+
+  <table id="internshipTable">
+    <thead>
+      <tr>
+       
+        <th>Name</th>
+        <th>Education</th>
+        <th>University</th>
+        <th>Completion Year</th>
+        <th>Study Area</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th class="Date">Applied Date</th>
+        <th>Resume</th>
+        <th>Photo</th>
+         
+      </tr>
+
+      <tr id="internshipTableTemplate" style="display: none;">
+        
+        
+        <td class="full-name"></td>
+        <td class="education"></td>
+        <td class="university"></td>
+        <td class="completion_year"></td>
+        <td class="study_area"></td>  
+        <td class="email"></td>
+        <td class="phone"></td>
+        <td class="date"></td>
+        <td class="resume"></td>
+    
+        <td class="photo"></td>
+        
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
